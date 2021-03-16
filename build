@@ -2,14 +2,13 @@
 
 cd /tmp/ci/sync/
 
-git clone https://github.com/Redmi-MT6768/android_kernel_xiaomi_mt6768 -b eleven kernel/xiaomi/mt6768
 git clone https://github.com/Redmi-MT6768/android_vendor_xiaomi_lava -b eleven vendor/xiaomi/lava
 git clone https://github.com/Redmi-MT6768/android_device_xiaomi_lava -b eleven device/xiaomi/lava
+git clone https://github.com/zubairk22oct/Device_Xiaomi_Lava -b Havoc-11 device/xiaomi/lava
 
 . build/envsetup.sh
-lunch lineage_lava-userdebug
 make api-stubs-docs
 make hiddenapi-lists-docs
 make system-api-stubs-docs
 make test-api-stubs-docs
-mka bacon -j69
+brunch
