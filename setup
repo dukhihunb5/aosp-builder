@@ -10,5 +10,5 @@ export JS_ENGINE=v8
 export USE_CCACHE=1
 ccache -M 200G
 
-repo init -q --no-repo-verify -u https://github.com/Havoc-OS/android_manifest.git -b eleven --depth=1 --groups=all,-notdefault,-device,-darwin,-x86,-mips
+repo init -q --no-repo-verify -u https://github.com/ProjectSakura/android.git -b 11 --depth=1 --groups=all,-notedefault,-device,-darwin,-x86,-mips
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j48 -q 
