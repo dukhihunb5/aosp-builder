@@ -6,7 +6,7 @@ git clone https://github.com/Redmi-MT6768/android_kernel_xiaomi_mt6768 -b eleven
 git clone https://github.com/Redmi-MT6768/android_vendor_xiaomi_lava -b eleven vendor/xiaomi/lava
 git clone https://github.com/Redmi-MT6768/android_device_xiaomi_lava -b eleven device/xiaomi/lava
 
-.build/envsetup.sh
+. build/envsetup.sh
 lunch lineage_lava-userdebug
 make api-stubs-docs
 make hiddenapi-lists-docs
