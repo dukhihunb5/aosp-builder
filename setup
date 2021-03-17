@@ -11,5 +11,5 @@ export JS_ENGINE=v8
 export USE_CCACHE=1
 ccache -M 200G
 
-repo init -q --no-repo-verify -u https://github.com/SuperiorOS/manifest.git -b eleven --depth=1 --groups=all,-notdefault,-device,-darwin,-x86,-mips
+repo init -q --no-repo-verify -u https://github.com/CipherOS/android_manifest.git -b eleven --depth=1 --groups=all,-notdefault,-device,-darwin,-x86,-mips
 repo sync
