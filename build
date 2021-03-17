@@ -5,6 +5,9 @@ cd /tmp/ci/sync/
 git clone https://github.com/zubairk22oct/Device_Xiaomi_Lava -b Superior-11 device/xiaomi/lava
 git clone https://github.com/Redmi-MT6768/android_kernel_xiaomi_mt6768 -b eleven kernel/xiaomi/mt6768
 git clone https://github.com/Redmi-MT6768/android_vendor_xiaomi_lava -b eleven vendor/xiaomi/lava
+git clone https://github.com/Redmi-MT6768/android_vendor_mediatek_ims -b eleven vendor/mediatek/ims
+
+cd frameworks/base && wget https://github.com/PixelExperience/frameworks_base/commit/37f5a323245b0fd6269752742a2eb7aa3cae24a7.patch && git apply 37f5a323245b0fd6269752742a2eb7aa3cae24a7.patch && cd ../ && cd opt/net/ims && wget https://github.com/PixelExperience/frameworks_opt_net_ims/commit/661ae9749b5ea7959aa913f2264dc5e170c63a0a.patch && git apply 661ae9749b5ea7959aa913f2264dc5e170c63a0a.patch && cd ../ && cd wifi && wget https://github.com/PixelExperience/frameworks_opt_net_wifi/commit/3bd2c14fbda9c079a4dc39ff4601ba54da589609.patch && git apply 3bd2c14fbda9c079a4dc39ff4601ba54da589609.patch && cd ../../../../
 
 . build/envsetup.sh
 lunch superior_lava-userdebug
