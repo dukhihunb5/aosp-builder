@@ -14,6 +14,8 @@ task:
       - bash zram
     sync_script:
       - bash setup
+    monitor script:
+      - bash monitor
     build_script: 
       - bash build 
     upload ccache script:
