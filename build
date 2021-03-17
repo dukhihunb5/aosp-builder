@@ -2,15 +2,15 @@
 
 cd /tmp/ci/sync/
 
-git clone https://github.com/zubairk22oct/android_device_xiaomi_rolex -b r device/xiaomi/rolex
-git clone https://github.com/Thagoo/android_vendor_xiaomi_rolex -b r vendor/xiaomi/rolex
-git clone https://github.com/Thagoo/platform_kernel_xiaomi_msm8917 -b lineage-18.1 kernel/xiaomi/msm8917
+git clone https://github.com/Redmi-MT6768/android_kernel_xiaomi_mt6768 -b eleven kernel/xiaomi/mt6768
+git clone https://github.com/Redmi-MT6768/android_vendor_xiaomi_lava -b eleven vendor/xiaomi/lava
+git clone https://github.com/zubairk22oct/Device_Xiaomi_Lava -b Havoc-11 device/xiaomi/lava
+bash device/xiaomi/lava/vendorsetup.sh
 
 . build/envsetup.sh
-export CIPHER_OFFICIAL=true
-lunch lineage_rolex-userdebug
+lunch havoc_lava-userdebug
 make api-stubs-docs
 make hiddenapi-lists-docs
 make system-api-stubs-docs
 make test-api-stubs-docs
-mka bacon -j8
+mka bacon -j10
