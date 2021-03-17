@@ -2,7 +2,8 @@
 
 #  mt6768 autopatcher by henloboi 202103040948 GMT+0
 
-ROOTDIR=$(realpath .)
+cd /tmp/ci/sync/
+
 pfwb() {
     cd frameworks/base && wget https://github.com/PixelExperience/frameworks_base/commit/37f5a323245b0fd6269752742a2eb7aa3cae24a7.patch && git apply 37f5a323245b0fd6269752742a2eb7aa3cae24a7.patch
 }
