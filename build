@@ -5,7 +5,7 @@ cd /tmp/ci/sync/
 git clone https://github.com/zubairk22oct/Device_Xiaomi_Lava -b Superior-11 device/xiaomi/lava
 git clone https://github.com/Redmi-MT6768/android_kernel_xiaomi_mt6768 -b eleven kernel/xiaomi/mt6768
 git clone https://github.com/Redmi-MT6768/android_vendor_xiaomi_lava -b eleven vendor/xiaomi/lava
-git clone https://github.com/Redmi-MT6768/android_vendor_mediatek_ims -b eleven vendor/mediatek/ims
+bash device/xiaomi/lava/vendorsetup.sh
 
 . build/envsetup.sh
 lunch superior_lava-userdebug
