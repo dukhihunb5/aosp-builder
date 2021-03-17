@@ -13,4 +13,4 @@ make api-stubs-docs
 make hiddenapi-lists-docs
 make system-api-stubs-docs
 make test-api-stubs-docs
-mka bacon -j16
+mka bacon -j48 
