@@ -1,0 +1,17 @@
+#!/bin/bash
+
+mkdir -p /tmp/rom # Where to sync source
+cd /tmp/rom
+
+sudo apt-get install -y wget
+
+# Repo init command, that -device,-mips,-darwin,-notdefault part will save you more time and storage to sync, add more according to your rom and choice. Optimization is welcomed! Let's make it quit, and with depth=1 so that no unnecessary things.
+repo init -q --no-repo-verify -u https://github.com/Havoc-OS/android_manifest.git -b eleven --depth=1 --groups=all,-notedefault,-device,-darwin,-x86,-mips
+
+# Sync source with -q, no need unnecessary messages, you can remove -q if want! try with -j30 first, if fails, it will try again with -j8
+repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j 30 -q || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j 8 -q
+
+git clone https://github.com/Redmi-MT6768/android_vendor_xiaomi_lava -b 11 vendor/xiaomi/lava
+git clone https://github.com/zubairk22oct/Device_Xiaomi_Lava -b Havoc-11 device/xiaomi/lava
+bash device/xiaomi/lava/vendorsetup.sh 
+
