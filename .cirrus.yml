@@ -14,16 +14,15 @@ task:
       cpu: 10  #8 cpu for dummy build, 10 or more cpu for final build, sometimes more than 8 cpu will cause a timelock, so you wont be able to run ci again within few hours, in build script use -j8 or -j10 depending what you used here, otherwise low memory issue will happen, 16cpu highest
       memory: 24G # So that we can have ram when needed, 24G highest
     ccache_script: # To add some sexy zram
-      - ./download_ccache # Ccache download script
+      - bash download_ccache
     sync_script: # To sync source
-      - ./sync # Source sync script
+      - bash sync
     monitor_background_script: # To monitor ccache and machine status every minute, runs in background
-      - ./monitor # Monitor script
+      - bash monitor
     build_script: # Actual build script foreground
-      - ./build # Build script to run
+      - bash build
     upload_ccache_script: # Upload ccache to cloud foreground
-      - ./upload_ccache # Ccache uploading script
-
+      - bash upload_ccache
 
 
 
