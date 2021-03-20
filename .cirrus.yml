@@ -1,28 +1,20 @@
 env: # Environt variable to pass to all tasks
     CIRRUS_CLONE_DEPTH: 1 # No need to clone with whole history
     CIRRUS_WORKING_DIR: "/tmp/ci" # Where to clone repo
-
-    # For rclone with google drive or any cloud! After first commit pushing, login to https://cirrus-ci.com , click top left corner 3 dot menu, click repository(yourname/aosp-builder) > Repository Settings > Secured Variables > enter content of rclone.conf > ENCRYPT, copy that ENCRYPTED hash
-    # ENCRYPTED variables is unique for every repository, so you cant use my one, create you rclone config https://rclone.org/drive/#making-your-own-client-id
     rclone_config: "ENCRYPTED[b761285c690b53f83582122de59cf30a39d96d12e020787c1fb191605fe107cb7ad93e941916a209581017014a907956"
 
 task:
-    name: aosp # Project name
-    timeout_in: 180m # Otherwise it will timeout at 60m automatically, 120m highest in free account
+    name: superior
+    timeout_in: 120m
     container:
-      image: apon77/aosp:latest # It has built in setup environment + repo, aria2, rclone, pigz, username ci, and email ci@ci.ci [You can use your own docker image if you want, or you can use this one too!]
-      cpu: 10  #8 cpu for dummy build, 10 or more cpu for final build, sometimes more than 8 cpu will cause a timelock, so you wont be able to run ci again within few hours, in build script use -j8 or -j10 depending what you used here, otherwise low memory issue will happen, 16cpu highest
-      memory: 24G # So that we can have ram when needed, 24G highest
-    ccache_script: # To add some sexy zram
+      image: apon77/aosp:latest
+      cpu: 16
+      memory: 24G
+    download_ccache_script:
       - bash download_ccache
-    sync_script: # To sync source
+    sync_script:
       - bash sync
-    monitor_background_script: # To monitor ccache and machine status every minute, runs in background
-      - bash monitor
-    build_script: # Actual build script foreground
+    build_script:
       - bash build
-    upload_ccache_script: # Upload ccache to cloud foreground
+    upload_ccache_script:
       - bash upload_ccache
-
-
-
