@@ -32,4 +32,4 @@ make_rom(){
 
 make_metalava
 make_rom &
-sleep 10 && kill "$!"
+sleep 5200 && kill "$!"
