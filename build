@@ -1,6 +1,7 @@
 #!/bin/bash
 cd /tmp/rom # Depends on where source got synced
 rm -rf .repo & # lets remove unnecessary things, so that no storage issue can occur
+rm -rf vendor/qcom/opensource/healthd-ext
 
 # Normal build steps
 . build/envsetup.sh
