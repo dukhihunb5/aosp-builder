@@ -2,8 +2,8 @@
 
 sudo apt-get install -y wget
 
-MANIFEST=git://github.com/SuperiorOS/manifest.git
-BRANCH=eleven
+MANIFEST=git://github.com/ProjectSakura/android.git
+BRANCH=11
 
 mkdir -p /tmp/rom
 cd /tmp/rom
@@ -16,6 +16,6 @@ git config --global user.email areeb9670@gmail.com
 # Sync source with -q, no need unnecessary messages, you can remove -q if want! try with -j30 first, if fails, it will try again with -j8
 repo sync
 
-git clone https://github.com/Redmi-MT6768/android_vendor_xiaomi_lava -b eleven vendor/xiaomi/lava
-git clone https://github.com/zubairk22oct/Device_Xiaomi_Lava -b Superior-11 device/xiaomi/lava
-bash device/xiaomi/lava/vendorsetup.sh
+git clone https://github.com/zubairk22oct/android_device_xiaomi_rolex -b r device/xiaomi/rolex
+git clone https://github.com/Thagoo/android_vendor_xiaomi_rolex -b r vendor/xiaomi/rolex
+
