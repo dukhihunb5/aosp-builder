@@ -18,4 +18,5 @@ repo sync
 
 git clone https://github.com/zubairk22oct/android_device_xiaomi_rolex -b r device/xiaomi/rolex
 git clone https://github.com/Thagoo/android_vendor_xiaomi_rolex -b r vendor/xiaomi/rolex
+git clone https://github.com/Thagoo/platform_kernel_xiaomi_msm8917 -b lineage-18.1 kernel/xiaomi/msm8917
 
