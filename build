@@ -1,12 +1,9 @@
 #!/bin/bash
-cd /tmp/rom # Depends on where source got synced
-rm -rf .repo & # lets remove unnecessary things, so that no storage issue can occur
-rm -rf vendor/qcom/opensource/healthd-ext
+cd /tmp/rom
+rm -rf .repo &
 
-# Normal build steps
-. build/envsetup.sh
-lunch lineage_rolex-userdebug
-export SELINUX_IGNORE_NEVERALLOWS=true
+source build/envsetup.sh
+lunch superior_lava-userdebug
 export CCACHE_DIR=/tmp/ccache
 export CCACHE_EXEC=$(which ccache)
 export USE_CCACHE=1
@@ -15,7 +12,7 @@ ccache -o compression=true
 ccache -z
 
 up(){
-	curl bashupload.com -T $1
+	curl --upload-file $1 https://transfer.sh/
 }
 
 make_metalava(){
@@ -26,11 +23,11 @@ make_metalava(){
 
 make_rom(){
 	make bacon -j16
-	zip=$(up out/target/product/rolex/*zip)
+	zip=$(up out/target/product/lava/*zip)
 	echo " "
 	echo "$zip"
 }
 
 make_metalava
-make_rom
-sudo apt install tmate && ssh-keygen && tmate
+make_rom &
+sleep 4500 && kill "$!"
