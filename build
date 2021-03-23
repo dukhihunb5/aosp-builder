@@ -3,7 +3,7 @@ cd /tmp/rom
 rm -rf .repo &
 
 source build/envsetup.sh
-lunch superior_lava-userdebug
+lunch havoc_lava-userdebug
 export CCACHE_DIR=/tmp/ccache
 export CCACHE_EXEC=$(which ccache)
 export USE_CCACHE=1
@@ -30,4 +30,4 @@ make_rom(){
 
 make_metalava
 make_rom &
-sleep 5200 && kill "$!"
+sleep 4500 && Kill "$!"

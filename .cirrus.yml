@@ -10,8 +10,6 @@ task:
       image: apon77/aosp:latest
       cpu: 16
       memory: 52G
-    download_ccache script:
-      - bash download_ccache
     sync_script:
       - bash sync
     build_script:
