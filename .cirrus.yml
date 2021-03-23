@@ -11,11 +11,11 @@ task:
       cpu: 16
       memory: 52G
     sync_script:
-      - ./sync
+      - bash sync
     build_script:
-      - ./build
+      - bash build
     upload_ccache_script:
-      - ./upload_ccache
+      - bash upload_ccache
 
 #start buuild rn
 
