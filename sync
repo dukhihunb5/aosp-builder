@@ -12,7 +12,7 @@ git config --global user.name zubairk22oct
 git config --global user.email areeb9670@gmail.com
 
 # Sync source with -q, no need unnecessary messages, you can remove -q if want! try with -j30 first, if fails, it will try again with -j8
-repo sync
+repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 
 git clone https://github.com/zubairk22oct/Device_Xiaomi_Lava -b Havoc-11 device/xiaomi/lava
 git clone https://github.com/Redmi-MT6768/android_vendor_xiaomi_lava -b eleven vendor/xiaomi/lava
