@@ -1,10 +1,10 @@
 #!/bin/bash
 
-url=https://cheems.mirrorbomt.workers.dev/superior-ccache.tar.gz
+url=https://mirror.cryllicbuster273.me/havoc-ccache.tar.gz
 
 cd /tmp # Where to download cccahe
 time aria2c $url -x16 -s50
 echo "dl done"
-time tar xf superior-ccache.tar.gz
+time tar xf havoc-ccache.tar.gz
 echo "unzip done"
-find superior-ccache.tar.gz -delete
+find havoc-ccache.tar.gz -delete
