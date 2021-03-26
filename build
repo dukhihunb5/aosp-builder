@@ -4,6 +4,8 @@ rm -rf .repo &
 
 source build/envsetup.sh
 lunch aosp_lava-userdebug
+export BUILD_BROKEN_DUP_RULES=true
+export BUILD_BROKEN_USES_BUILD_COPY_HEADERS=true
 export CCACHE_DIR=/tmp/ccache
 export CCACHE_EXEC=$(which ccache)
 export USE_CCACHE=1
