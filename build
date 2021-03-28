@@ -3,7 +3,7 @@ cd /tmp/rom
 rm -rf .repo &
 
 source build/envsetup.sh
-lunch aosp_lava-userdebug
+lunch lineage_angelica-userdebug
 export BUILD_BROKEN_DUP_RULES=true
 export BUILD_BROKEN_USES_BUILD_COPY_HEADERS=true
 export CCACHE_DIR=/tmp/ccache
@@ -25,7 +25,7 @@ make_metalava(){
 
 make_rom(){
 	make bacon -j16
-	zip=$(up out/target/product/lava/*zip)
+	zip=$(up out/target/product/angelica/*zip)
 	echo " "
 	echo "$zip"
 }
