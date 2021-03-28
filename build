@@ -1,6 +1,7 @@
 #!/bin/bash
 cd /tmp/rom
 rm -rf .repo &
+rm -rf system/framework/mediatek-res.apk
 
 source build/envsetup.sh
 lunch lineage_angelica-userdebug
