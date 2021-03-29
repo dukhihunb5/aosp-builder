@@ -1,8 +1,8 @@
  #!/bin/bash
 sudo apt install wget
-MANIFEST=git://github.com/crdroidandroid/android.git
-BRANCH=10.0-20210206
- 
+MANIFEST=https://github.com/Havoc-OS/android_manifest.git
+BRANCH=eleven
+
 mkdir -p /tmp/rom
 cd /tmp/rom
 
@@ -14,7 +14,8 @@ git config --global user.email areeb9670@gmail.com
 # Sync source with -q, no need unnecessary messages, you can remove -q if want! try with -j30 first, if fails, it will try again with -j8
 repo sync
 
-git clone https://github.com/wulan17/android_device_xiaomi_angelica device/xiaomi/angelica
-git clone https://github.com/wulan17/proprietary_vendor_xiaomi_angelica vendor/xiaomi/angelica
+git clone https://github.com/zubairk22oct/Device_Xiaomi_Lava -b Havoc_11-permissive device/xiaomi/lava
+git clone https://github.com/Redmi-MT6768/android_vendor_xiaomi_lava -b eleven vendor/xiaomi/lava
+bash device/xiaomi/lava/vendorsetup.sh
 
 ls

@@ -1,12 +1,9 @@
 #!/bin/bash
 cd /tmp/rom
 rm -rf .repo &
-rm -rf system/framework/mediatek-res.apk
 
 source build/envsetup.sh
-lunch lineage_angelica-userdebug
-export BUILD_BROKEN_DUP_RULES=true
-export BUILD_BROKEN_USES_BUILD_COPY_HEADERS=true
+lunch havoc_lava-userdebug
 export CCACHE_DIR=/tmp/ccache
 export CCACHE_EXEC=$(which ccache)
 export USE_CCACHE=1
@@ -26,7 +23,7 @@ make_metalava(){
 
 make_rom(){
 	make bacon -j16
-	zip=$(up out/target/product/angelica/*zip)
+	zip=$(up out/target/product/lava/*zip)
 	echo " "
 	echo "$zip"
 }
