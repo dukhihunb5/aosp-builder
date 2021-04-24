@@ -3,7 +3,7 @@ cd /tmp/rom
 rm -rf .repo &
 
 source build/envsetup.sh
-lunch lineage_lava-userdebug
+lunch du_r5x-userdebug
 export CCACHE_DIR=/tmp/ccache
 export CCACHE_EXEC=$(which ccache)
 export USE_CCACHE=1
@@ -23,12 +23,12 @@ make_metalava(){
 
 make_rom(){
 	make bacon -j16
-	zip=$(up out/target/product/lava/*zip)
+	zip=$(up out/target/product/r5x/*zip)
 	echo " "
 	echo "$zip"
 }
 
 make_metalava
 make_rom &
-sleep 5200 && kill "$!"
+sleep 4500 && kill "$!"
 
