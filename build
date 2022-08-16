@@ -3,7 +3,7 @@ cd /tmp/rom
 rm -rf .repo &
 
 source build/envsetup.sh
-lunch du_r5x-userdebug
+lunch syberia_mido-eng
 export CCACHE_DIR=/tmp/ccache
 export CCACHE_EXEC=$(which ccache)
 export USE_CCACHE=1
@@ -31,4 +31,3 @@ make_rom(){
 make_metalava
 make_rom &
 sleep 4500 && kill "$!"
-
