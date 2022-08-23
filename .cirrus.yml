@@ -7,7 +7,7 @@ task:
     name: TNTDupper
     timeout_in: 122m
     container:
-      image: mrkhan77/aosp:latest
+      image: fr3akyphantom/droid-builder:latest
       cpu: 8
       memory: 30G
    
@@ -18,6 +18,3 @@ task:
       - bash build
     upload_ccache_script:
       - bash upload_ccache
-
-#start buuild rn
-
